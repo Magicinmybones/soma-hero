@@ -482,6 +482,31 @@ svg{ display:block; overflow:visible; }
 @media (prefers-reduced-motion: reduce){
   .menu-panel,.menu-scrim,.burger line{ transition:none !important; }
 }
+
+/* A single opening sequence: fixed backdrop, then metrics, message, and actions. */
+@media (prefers-reduced-motion: no-preference){
+  .nav .cell:not(.c-space){animation:soma-nav .48s cubic-bezier(.22,1,.36,1) backwards}
+  .nav .c-how,.nav .c-burger{animation-delay:.05s}
+  .nav .c-metrics{animation-delay:.1s}
+  .nav .c-devices{animation-delay:.15s}
+  .nav .c-login{animation-delay:.18s}
+  .nav .c-shop{animation-delay:.23s}
+  .nav .c-app{animation-delay:.29s}
+  .m-zero{animation:soma-data .5s cubic-bezier(.22,1,.36,1) .25s backwards}
+  .m-plus{animation:soma-data .5s cubic-bezier(.22,1,.36,1) .4s backwards}
+  .m-five{animation:soma-data .5s cubic-bezier(.22,1,.36,1) .53s backwards}
+  .badge{animation:soma-data .52s cubic-bezier(.22,1,.36,1) .91s backwards}
+  .r1 .h1{animation:soma-title .75s cubic-bezier(.16,1,.3,1) .72s backwards}
+  .r2 .h1{animation:soma-title .75s cubic-bezier(.16,1,.3,1) .93s backwards}
+  .desc{animation:soma-copy .56s cubic-bezier(.22,1,.36,1) 1.16s backwards}
+  .ctas{animation:soma-copy .56s cubic-bezier(.22,1,.36,1) 1.31s backwards}
+  .works{animation:soma-data .48s cubic-bezier(.22,1,.36,1) 1.51s backwards}
+  .logos{animation:soma-data .48s cubic-bezier(.22,1,.36,1) 1.59s backwards}
+  @keyframes soma-nav{from{opacity:0;clip-path:inset(0 0 100%)}to{opacity:1;clip-path:inset(0)}}
+  @keyframes soma-data{from{opacity:0}to{opacity:1}}
+  @keyframes soma-title{from{opacity:0;transform:translateY(.2em);clip-path:inset(100% 0 0)}to{opacity:1;transform:none;clip-path:inset(0)}}
+  @keyframes soma-copy{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
 </style>
 </head>
 <body>
